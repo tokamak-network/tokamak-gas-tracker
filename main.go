@@ -28,13 +28,14 @@ type Result struct {
 
 func main() {
 	l1RPC := os.Getenv("L1_RPC")
+	fileName := os.Getenv("FILE_NAME")
 
 	client, err := ethclient.Dial(l1RPC)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	file, err := os.Open("thanos-sepolia-test.csv")
+	file, err := os.Open(fileName)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -118,7 +119,7 @@ func main() {
 		fmt.Printf("%s: %v\n", k, v)
 	}
 
-	outFile, err := os.Create("output-thanos-sepolia-test.csv")
+	outFile, err := os.Create(fmt.Sprintf("./outputs/output-%s", fileName))
 	if err != nil {
 		log.Fatal(err)
 	}
