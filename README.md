@@ -1,12 +1,14 @@
 # tokamak-gas-tracker
 
-A tool for tracking the gas used by the Batcher
+A tool for tracking the gas used
 
-Analyse batcher's gas usage per day using this tool
+Analyse your gas usage per day using this tool
+
+(The initial purpose was to track the gas usage of a batcher)
 
 ## Usage
 
-Export the transaction usage history of batchInbox in Ether Scan to a csv file and use this file as input data.
+Export the transaction usage history in Ether Scan to a csv file and use this file as input data.
 
 ### Env settings
 ```bash 
